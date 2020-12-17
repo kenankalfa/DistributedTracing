@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "b564fa87-ac2e-4bdf-bf2c-8b82a9e17694",
+		"name": "DistributedTracing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "00 - Calc-Telemetry-Filtered",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Val1\":4,\r\n    \"Val2\":5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32001/api/telemetry/servicea/calc/summy",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32001",
+					"path": [
+						"api",
+						"telemetry",
+						"servicea",
+						"calc",
+						"summy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "01 - Calc-Telemetry-OutOf-Filtered",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Val1\":4,\r\n    \"Val2\":7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32001/api/servicea/calc-no-traced/summy",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32001",
+					"path": [
+						"api",
+						"servicea",
+						"calc-no-traced",
+						"summy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02 - Calc-Sql-Telemetry-Filtered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:32001/api/telemetry/servicea/sql",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32001",
+					"path": [
+						"api",
+						"telemetry",
+						"servicea",
+						"sql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03 - StringCalc-Telemetry-Filtered-Uppy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Val\":\"Fenerbahceeee\",\r\n    \"StartIndex\":0,\r\n    \"Length\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32011/api/telemetry/servicea1/stringcalc/uppy",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32011",
+					"path": [
+						"api",
+						"telemetry",
+						"servicea1",
+						"stringcalc",
+						"uppy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 - StringCalc-Telemetry-Filtered-Suby",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Val\":\"3Temmuz\",\r\n    \"StartIndex\":0,\r\n    \"Length\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32011/api/telemetry/servicea1/stringcalc/suby",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32011",
+					"path": [
+						"api",
+						"telemetry",
+						"servicea1",
+						"stringcalc",
+						"suby"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 - Custom-Telemetry-Message",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:32021/api/values/?val1=fener&val2=bahce",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32021",
+					"path": [
+						"api",
+						"values",
+						""
+					],
+					"query": [
+						{
+							"key": "val1",
+							"value": "fener"
+						},
+						{
+							"key": "val2",
+							"value": "bahce"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "06 - Custom-Telemetry-Related",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:32031/api/servicec1/date/?yearValue=2020",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32031",
+					"path": [
+						"api",
+						"servicec1",
+						"date",
+						""
+					],
+					"query": [
+						{
+							"key": "yearValue",
+							"value": "2020"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
